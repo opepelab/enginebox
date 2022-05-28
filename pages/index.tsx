@@ -12,6 +12,7 @@ type Map = {
 const Index: React.FC<Map> = ({ blog }) => {
   const t = useTranslate();
   const { locale } = useRouter();
+  const From = locale === 'ja';
   return (
     <main>
       <div>
@@ -26,7 +27,7 @@ const Index: React.FC<Map> = ({ blog }) => {
             </dt>
             {/* <Link href={`/docs/url/${data.slug}`}> */}
             <a>
-              <div>{locale === 'ja' ? blog.title.ja : blog.title.en}</div>
+              <div>{From ? blog.title.ja : blog.title.en}</div>
             </a>
             {/* </Link> */}
           </dl>
