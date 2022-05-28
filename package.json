@@ -33,7 +33,6 @@
     "eslint-config-next": "12.1.6"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": "eslint --fix",
-    "*.{css,scss}": "stylelint --fix"
+    "*.{js,ts,jsx,tsx}": "eslint --fix"
   }
 }
