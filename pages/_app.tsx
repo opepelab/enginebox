@@ -1,7 +1,12 @@
-import { AppProps } from "next/app";
+import { AppProps } from 'next/app';
+import LayoutProvider from 'components/layout';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+  return (
+    <LayoutProvider>
+      <Component {...pageProps} />
+    </LayoutProvider>
+  );
 };
 
 export default MyApp;

@@ -9,8 +9,7 @@
     "eslint": "eslint --ext .js,.npjsx,.ts,.tsx --fix .",
     "prettier": "prettier --write .",
     "lint-staged": "lint-staged",
-    "prepare": "husky install",
-    "wasm": "wasm-pack build wasm ../src/main"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.0.2",

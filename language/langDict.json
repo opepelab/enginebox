@@ -1,0 +1,10 @@
+{
+  "test": {
+    "ja": "英語にする",
+    "en": "useJapanese"
+  },
+  "hello": {
+    "ja": "はろー",
+    "en": "hello"
+  }
+}
