@@ -20,32 +20,32 @@ const Index: React.FC<Map> = ({ blog }) => {
           <a>Java</a>
         </Link>
         <p>test</p>
-        {blog.map((blog: any) => (
+        {/* {blog.map((blog: any) => (
           <dl key={blog.id}>
             <dt className="dateST">
               <div>{blog.data}</div>
-            </dt>
-            {/* <Link href={`/docs/url/${data.slug}`}> */}
-            <a>
+            </dt> */}
+        {/* <Link href={`/docs/url/${data.slug}`}> */}
+        {/* <a>
               <div>{From ? blog.title.ja : blog.title.en}</div>
-            </a>
-            {/* </Link> */}
-          </dl>
-        ))}
+            </a> */}
+        {/* </Link> */}
+        {/* </dl>
+        ))} */}
       </div>
     </main>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://127.0.0.1:5000/');
-  const data = await res.json();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch('http://127.0.0.1:5000/');
+//   const data = await res.json();
 
-  return {
-    props: {
-      blog: data.item,
-    },
-  };
-};
+//   return {
+//     props: {
+//       blog: data.item,
+//     },
+//   };
+// };
 
 export default Index;

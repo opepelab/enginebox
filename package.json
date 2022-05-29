@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && wasm",
+    "build": "next build",
     "start": "next start",
     "eslint": "eslint --ext .js,.npjsx,.ts,.tsx --fix .",
     "prettier": "prettier --write .",
