@@ -16,7 +16,7 @@ const Index: React.FC<Map> = ({ blog }) => {
   return (
     <main>
       <div>
-        <Link href="/JavaScript">
+        <Link href="/JS">
           <a>Java</a>
         </Link>
         <p>test</p>

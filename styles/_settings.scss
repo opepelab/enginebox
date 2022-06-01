@@ -1,0 +1,193 @@
+$p0: 0;
+$p5: 5px;
+$p10: $p5 * 2;
+$p12: $p10 * 1.2;
+$p14: $p10 * 1.4;
+$p16: $p10 * 1.6;
+$p20: $p10 * 2;
+$p40: $p20 * 2;
+$p50: $p10 * 5;
+$p60: $p20 * 3;
+$p80: $p20 * 4;
+$p100: $p50 * 2;
+$p200: $p50 * 4;
+$r0: 0%;
+$r25: 25%;
+$r50: $r25 * 2;
+$r100: $r50 * 2;
+
+// @font-face {
+//   font-family: Rationale;
+//   src: url('./font/Rationale-Regular.ttf') format('TrueType');
+// }
+
+$Google0: 'Rationale';
+$Google: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans, droid sans,
+  helvetica neue, sans-serif;
+$IB: inline-block;
+$NO: none;
+$BG: #1f2a38;
+$ST: #e1e1e1;
+$SS: #4e92f8;
+$FB: #ffb7b7;
+$FE: #ffefef;
+$YE: #f8f0df;
+$ME: rgb(0 0 0 / 75%);
+
+@mixin Sankaku {
+  display: $IB;
+  border: {
+    style: solid;
+    width: 4px;
+  }
+}
+
+@mixin Back {
+  z-index: 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 20%;
+}
+
+@mixin LRauto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin H1H2 {
+  display: $IB;
+  font-size: $p20;
+  border-bottom: 1px solid gray;
+  margin-top: 0;
+  @include LRauto;
+}
+
+@mixin H3 {
+  font-weight: 100;
+  font-size: 16px;
+}
+
+@mixin H5 {
+  border: solid var(--color-text) 1px;
+  display: $IB;
+  padding: 0 5px;
+  margin: 0%;
+  border-radius: 2px;
+}
+
+@mixin Hover {
+  transition-duration: 0.1s;
+  animation: 0.8s feed;
+}
+
+@mixin FilterAtom {
+  z-index: 1;
+  position: fixed;
+  top: $r0;
+  left: $r0;
+  width: $r100;
+  height: $r100;
+
+  // background: rgb(0 0 0 / 15%);
+}
+
+@mixin Menu {
+  z-index: 1;
+  position: relative;
+}
+
+@mixin State-false {
+  opacity: 1;
+  transition-duration: 0.4s;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  transform: scaleY(0);
+  transition-timing-function: steps(2, start);
+}
+
+@mixin State-true {
+  transition-duration: 0.4s;
+  visibility: visible;
+  height: auto;
+  padding: 15px 0 5px;
+  transition-timing-function: steps(2, start);
+}
+
+// old menu is FilterAtom
+
+@mixin BBMyellow {
+  background: white;
+  color: #333;
+  font: {
+    family: $Google;
+    size: 12px;
+  }
+}
+
+@mixin Input {
+  border: none;
+  outline: none;
+  width: $p50 * 6;
+  height: $p20;
+  border-radius: $p5;
+}
+
+@mixin Textarea {
+  border: none;
+  outline: none;
+  width: $p50 * 8;
+  height: $p50 * 6;
+  border-radius: $p5;
+  resize: vertical;
+  overflow: auto;
+}
+
+@mixin Mbutton {
+  position: relative;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  background: $FB;
+  border: solid 4px;
+  color: #fff;
+  padding: 10px;
+  width: $p50 * 2.5;
+  height: $p20 * 1;
+  cursor: pointer;
+  border-radius: 10px;
+  font: {
+    size: 16px;
+    weight: bold;
+  }
+}
+
+@mixin Underline {
+  content: '';
+  position: absolute;
+  background-color: var(--color-icon);
+  height: 3px;
+  pointer-events: none;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+@mixin Tool {
+  position: absolute;
+  width: max-content;
+  top: 50px;
+  right: -56px;
+  background-color: var(--color-bg);
+  border: solid 1px var(--color-menuBorder);
+  color: var(--color-text);
+  transition: all 0.4s;
+  transform-origin: center;
+  padding: 12px;
+  border-radius: 4px;
+}
