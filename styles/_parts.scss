@@ -1,1 +1,15 @@
+.Toggle {
+  position: relative;
+  left: 20px;
+  top: 15px;
+}
 
+.border {
+  border-bottom: solid 4px rebeccapurple;
+  transition-duration: 2s;
+}
+
+.borderNoHave {
+  border-bottom: none;
+  transition-duration: 2s;
+}
