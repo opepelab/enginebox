@@ -15,11 +15,32 @@ body {
   right: 0px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+}
+
+.Index {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  left: 20px;
+  top: 400px;
+}
+.HomeList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  text-align: left;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(213, 63, 118);
 }

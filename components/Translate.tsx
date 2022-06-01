@@ -1,19 +1,16 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import useTranslate from 'hooks/useTranslate';
+import ActiveLink from 'components/Custom/ActiveLink';
 
 const Translate = () => {
-  const t = useTranslate();
-  const { locale } = useRouter();
   return (
     <>
-      <Link href="" locale="ja" className="bt">
-        日本語
-      </Link>
+      <ActiveLink href="" locale="ja" activeClassName="border">
+        <a>日本語</a>
+      </ActiveLink>
       /
-      <Link href="" locale="en">
-        English
-      </Link>
+      <ActiveLink href="" locale="en" activeClassName="border">
+        <a>English</a>
+      </ActiveLink>
     </>
   );
 };

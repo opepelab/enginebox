@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import LayoutProvider from 'components/layout';
+import LayoutProvider from 'components/Layout/layout';
 import 'styles/globals.scss';
 // import 'styles/mobile.scss';
 

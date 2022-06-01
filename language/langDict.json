@@ -3,8 +3,8 @@
     "ja": "英語にする",
     "en": "useJapanese"
   },
-  "hello": {
-    "ja": "はろー",
-    "en": "hello"
+  "Built": {
+    "ja": "環境構築",
+    "en": "Built environment"
   }
 }

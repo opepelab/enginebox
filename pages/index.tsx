@@ -1,4 +1,4 @@
-import { Text, Box } from '@chakra-ui/react';
+import { Text, Box, Heading } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 import Link from 'next/link';
@@ -16,10 +16,35 @@ const Index: React.FC<Map> = ({ blog }) => {
   return (
     <main>
       <div>
-        <Link href="/JS">
-          <a>Java</a>
-        </Link>
-        <p>test</p>
+        <div className="Index">
+          <div className="HomeList">
+            <li>
+              <Link href="/JS">
+                <a>JavaScript</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/TS">
+                <a>TypeScript</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/RT">
+                <a>React</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/NT">
+                <a>Next.js</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/ND">
+                <a>Node.js . {t.Built}</a>
+              </Link>
+            </li>
+          </div>
+        </div>
         {/* {blog.map((blog: any) => (
           <dl key={blog.id}>
             <dt className="dateST">

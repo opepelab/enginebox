@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <div>Python React TypeScript JavaScript</div>;
+  return <div></div>;
 };
 
 export default Footer;
