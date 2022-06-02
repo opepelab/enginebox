@@ -18,37 +18,33 @@ const Index: React.FC<Map> = ({ blog }) => {
       <main>
         <div>
           <div className="Index">
-            <div className="HomeList">
-              <nav>
-                <ul>
-                  <li>
-                    <Link href="/JS">
-                      <a>JavaScript</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/TS">
-                      <a>TypeScript</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/RT">
-                      <a>React</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/NT">
-                      <a>Next.js</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/ND">
-                      <a>Node.js . {t.Built}</a>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <ul className="HomeList">
+              <li>
+                <Link href="/JS">
+                  <a>JavaScript</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/TS">
+                  <a>TypeScript</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/RT">
+                  <a>React</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/NT">
+                  <a>Next.js</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/ND">
+                  <a>Node.js . {t.Built}</a>
+                </Link>
+              </li>
+            </ul>
           </div>
           {/* {blog.map((blog: any) => (
           <dl key={blog.id}>

@@ -1,9 +1,8 @@
 const Footer = () => {
   return (
-    <>
-      <div className="FixedBottom">EngineBox</div>
-      <div className="FixedBottom">EngineBox</div>
-    </>
+    <div className="footer">
+      <div className="FixedBottom">© enginebox 2022</div>
+    </div>
   );
 };
 

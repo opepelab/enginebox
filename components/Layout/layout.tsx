@@ -21,7 +21,8 @@ const LayoutProvider: React.FC<RNode> = ({ children }) => {
       </Head>
       <Translate />
       <Header />
-      {children}
+      <div className="footerFix">{children}</div>
+
       <Footer />
     </>
   );

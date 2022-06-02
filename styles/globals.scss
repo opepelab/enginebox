@@ -7,7 +7,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
-  transition-duration: 2s;
 }
 
 .bt {
@@ -43,4 +42,15 @@ li {
 a {
   text-decoration: none;
   color: rgb(213, 63, 118);
+}
+
+.footerFix {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.footer {
+  padding-top: 40px;
+  text-align: center;
 }
