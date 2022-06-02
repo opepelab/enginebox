@@ -6,10 +6,9 @@
 
 .border {
   border-bottom: solid 4px rebeccapurple;
-  transition-duration: 2s;
+  pointer-events: none;
 }
 
 .borderNoHave {
   border-bottom: none;
-  transition-duration: 2s;
 }

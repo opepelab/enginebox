@@ -22,7 +22,6 @@ const LayoutProvider: React.FC<RNode> = ({ children }) => {
       <Translate />
       <Header />
       {children}
-
       <Footer />
     </>
   );

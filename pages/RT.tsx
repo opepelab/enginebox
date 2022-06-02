@@ -8,26 +8,16 @@ type Map = {
   };
 };
 
-const Index: React.FC<Map> = ({ blog }) => {
+const Rt: React.FC<Map> = ({ blog }) => {
   const t = useTranslate();
   return (
-    <main>
-      <div>
-        <Text>{t.hello}</Text>
-        {/* {blog.map((blog: any) => (
-          <dl key={blog.id}> */}
-        {/* <dt className="dateST">
-              <Date dateString={data.date} />
-            </dt> */}
-        {/* <Link href={`/docs/url/${data.slug}`}> */}
-        {/* <a>
-              <div>{blog.title}</div>
-            </a> */}
-        {/* </Link> */}
-        {/* </dl>
-        ))} */}
-      </div>
-    </main>
+    <div>
+      <main>
+        <Box>
+          <Text>Test</Text>
+        </Box>
+      </main>
+    </div>
   );
 };
 
@@ -42,4 +32,4 @@ const Index: React.FC<Map> = ({ blog }) => {
 //   };
 // };
 
-export default Index;
+export default Rt;

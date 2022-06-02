@@ -7,25 +7,15 @@ type Map = {
   };
 };
 
-const Index: React.FC<Map> = ({ blog }) => {
+const Ts: React.FC<Map> = ({ blog }) => {
   return (
-    <main>
-      <div>
-        <Text>tes</Text>
-        {/* {blog.map((blog: any) => (
-          <dl key={blog.id}> */}
-        {/* <dt className="dateST">
-              <Date dateString={data.date} />
-            </dt> */}
-        {/* <Link href={`/docs/url/${data.slug}`}> */}
-        {/* <a>
-              <div>{blog.title}</div>
-            </a> */}
-        {/* </Link> */}
-        {/* </dl>
-        ))} */}
-      </div>
-    </main>
+    <div>
+      <main>
+        <Box>
+          <Text>tes</Text>
+        </Box>
+      </main>
+    </div>
   );
 };
 
@@ -40,4 +30,4 @@ const Index: React.FC<Map> = ({ blog }) => {
 //   };
 // };
 
-export default Index;
+export default Ts;
