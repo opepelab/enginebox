@@ -1,5 +1,5 @@
-// import { Text, Box, Heading } from '@chakra-ui/react';
-// import { GetStaticProps } from 'next';
+import { Text, Box, Heading } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -46,33 +46,28 @@ const Index: React.FC<Map> = ({ blog }) => {
               </li>
             </ul>
           </div>
-          {/* {blog.map((blog: any) => (
-          <dl key={blog.id}>
-            <dt className="dateST">
-              <div>{blog.data}</div>
-            </dt> */}
-          {/* <Link href={`/docs/url/${data.slug}`}> */}
-          {/* <a>
-              <div>{From ? blog.title.ja : blog.title.en}</div>
-            </a> */}
-          {/* </Link> */}
-          {/* </dl>
-        ))} */}
+          {blog.map((props: any) => (
+            <dl key={props.id}>
+              <Link href="/">
+                <a className="Center">{From ? props.title.ja : props.title.en}</a>
+              </Link>
+            </dl>
+          ))}
         </div>
       </main>
     </>
   );
 };
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const res = await fetch('http://127.0.0.1:5000/');
-//   const data = await res.json();
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('http://localhost:3000/api/hello');
+  const data = await res.json();
 
-//   return {
-//     props: {
-//       blog: data.item,
-//     },
-//   };
-// };
+  return {
+    props: {
+      blog: data.item,
+    },
+  };
+};
 
 export default Index;

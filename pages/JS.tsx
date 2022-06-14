@@ -21,15 +21,15 @@ const Js: React.FC<Map> = ({ blog }) => {
   );
 };
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const res = await fetch("http://127.0.0.1:5000/");
-//   const data = await res.json();
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('http://localhost:3000/api/hello');
+  const data = await res.json();
 
-//   return {
-//     props: {
-//       blog: data.item,
-//     },
-//   };
-// };
+  return {
+    props: {
+      blog: data.item,
+    },
+  };
+};
 
 export default Js;

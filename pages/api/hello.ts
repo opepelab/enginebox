@@ -37,6 +37,14 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
         引数っていうのはこれから先ずっと出てくる概念だから重要だぞ。
         今回紹介した文法はJavaScriptとTypeScriptの文法になる。`,
       },
+      {
+        id: 3,
+        title: {
+          ja: '休憩することを覚えよう',
+          en: 'Variable',
+        },
+        body: 'x = ~',
+      },
     ],
   });
 };
