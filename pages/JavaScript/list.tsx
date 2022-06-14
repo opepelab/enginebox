@@ -33,7 +33,7 @@ const List: React.FC<Map> = ({ docs }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/api/hello');
+  const res = await fetch('https://enginebox.vercel.app/api/hello');
   const data = await res.json();
 
   return {

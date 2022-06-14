@@ -39,12 +39,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params as IParams;
-  const res = await fetch(`http://localhost:3000/api/hello/${slug}`);
+  const res = await fetch(`https://enginebox.vercel.app/api/hello/${slug}`);
   const data = await res.json();
 
   return {
     props: {
-      docs: data.items,
+      docs: data.items[0],
     },
   };
 };
