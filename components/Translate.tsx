@@ -4,7 +4,7 @@ import Reactive from './Custom/Reactive';
 
 const Translate = () => {
   return (
-    <div className="Toggle">
+    <div className="TranslateToggle">
       <Reactive url="" locale="ja" on={'border'} off="borderNoHave">
         日本語 /
       </Reactive>
