@@ -6,6 +6,7 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
     item: [
       {
         id: 1,
+        slug: 'variable',
         title: {
           ja: '変数を学ぼう',
           en: 'Variable',
@@ -14,6 +15,7 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
       },
       {
         id: 2,
+        slug: 'functions',
         title: {
           ja: '関数を学ぼう',
           en: 'Learn functions',

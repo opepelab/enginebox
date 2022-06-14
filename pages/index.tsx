@@ -20,7 +20,7 @@ const Index: React.FC<Map> = ({ blog }) => {
           <div className="Index">
             <ul className="HomeList">
               <li>
-                <Link href="/JS">
+                <Link href="/JavaScript/list">
                   <a>JavaScript</a>
                 </Link>
               </li>
