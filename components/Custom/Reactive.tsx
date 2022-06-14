@@ -11,7 +11,7 @@ type RNode = {
   locale: string;
 };
 
-const Reactive: React.FC<RNode> = ({ children, url, on, off, mount, locale }) => {
+const Reactive: React.FC<RNode> = ({ children, url, on, off, locale }) => {
   const router = useRouter();
   return (
     <Link href={url} locale={locale}>

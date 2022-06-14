@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default (req: NextApiRequest, res: NextApiResponse): void => {
   res.statusCode = 200;
   res.json({
-    item: [
+    items: [
       {
         id: 1,
         slug: 'variable',
@@ -41,6 +41,7 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
       },
       {
         id: 3,
+        slug: 'functions',
         title: {
           ja: '休憩することを覚えよう',
           en: 'Variable',

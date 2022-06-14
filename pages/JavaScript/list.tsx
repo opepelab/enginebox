@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 type Map = {
-  blog: {
+  docs: {
     map: StringConstructor;
   };
 };
 
-const Js: React.FC<Map> = ({ blog }) => {
+const List: React.FC<Map> = ({ docs }) => {
   const t = useTranslate();
   const { locale } = useRouter();
   const From = locale === 'ja';
@@ -20,7 +20,7 @@ const Js: React.FC<Map> = ({ blog }) => {
         <Box>
           <Text>Test</Text>
         </Box>
-        {blog.map((props: any) => (
+        {docs.map((props: any) => (
           <dl key={props.id}>
             <Link href={`/JavaScript/docs/${props.slug}`}>
               <a className="Center">{From ? props.title.ja : props.title.en}</a>
@@ -38,9 +38,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      blog: data.item,
+      docs: data.items,
     },
   };
 };
 
-export default Js;
+export default List;
