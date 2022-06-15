@@ -10,6 +10,15 @@ type Map = {
   };
 };
 
+type Content = {
+  id: number;
+  slug: string;
+  title: {
+    ja: string;
+    en: string;
+  };
+};
+
 const List: React.FC<Map> = ({ docs }) => {
   const t = useTranslate();
   const { locale } = useRouter();
@@ -20,7 +29,7 @@ const List: React.FC<Map> = ({ docs }) => {
         <Box>
           <Text>Test</Text>
         </Box>
-        {docs.map((props: any) => (
+        {docs.map((props: Content) => (
           <dl key={props.id}>
             <Link href={`/JavaScript/docs/${props.slug}`}>
               <a className="Center">{From ? props.title.ja : props.title.en}</a>
@@ -33,7 +42,7 @@ const List: React.FC<Map> = ({ docs }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://enginebox.vercel.app/api/hello');
+  const res = await fetch('http://localhost:3000/api/hello/');
   const data = await res.json();
 
   return {
