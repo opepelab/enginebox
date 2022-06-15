@@ -15,6 +15,10 @@ type Paths = {
   slug: string;
 };
 
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+
 const Slug: React.FC<Content> = ({ docs }) => {
   return (
     <div>
@@ -29,7 +33,7 @@ const Slug: React.FC<Content> = ({ docs }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://localhost:3000/api/hello');
+  const res = await fetch('https://enginebox.vercel.app/api/hello');
   const data = await res.json();
 
   const paths = data.items.map((item: Paths) => ({
@@ -39,8 +43,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params as Paths;
-  const res = await fetch(`http://localhost:3000/api/hello/${slug}`);
+  const slug = context.params as IParams;
+  const res = await fetch(`https://enginebox.vercel.app/api/hello/${slug}`);
   const data = await res.json();
 
   return {
