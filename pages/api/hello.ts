@@ -10,7 +10,10 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
           ja: '変数を学ぼう',
           en: 'Variable',
         },
-        body: 'test',
+        body: {
+          ja: 'てすとー',
+          en: 'testoer',
+        },
       },
       {
         id: 2,
@@ -19,7 +22,8 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
           ja: '関数を学ぼう',
           en: 'Learn functions',
         },
-        body: `関数は最初にconstで代入する関数を宣言する。<br/>
+        body: {
+          ja: `関数は最初にconstで代入する関数を宣言する。<br/>
         <code>const Index = ({引数}) => { return (戻り値)}</code> \n
         アロー関数だとこんな感じだ。
         関数の動きの基本は。
@@ -37,6 +41,8 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
         こんな感じだ。
         引数っていうのはこれから先ずっと出てくる概念だから重要だぞ。
         今回紹介した文法はJavaScriptとTypeScriptの文法になる。`,
+          en: 'test',
+        },
       },
       {
         id: 3,
@@ -45,7 +51,10 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
           ja: '休憩することを覚えよう',
           en: 'Variable',
         },
-        body: 'test',
+        body: {
+          ja: 'てすつ',
+          en: 'testier',
+        },
       },
     ],
   });
