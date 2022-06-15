@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import { useRouter } from 'next/router';
 
 type Content = {
   docs: {
@@ -20,11 +21,13 @@ interface IParams extends ParsedUrlQuery {
 }
 
 const Slug: React.FC<Content> = ({ docs }) => {
+  const { locale } = useRouter();
+  const From = locale === 'ja';
   return (
     <div>
       <main>
         <div>
-          <h1 className="h1">{docs.title.ja}</h1>
+          <h1 className="h1">{From ? docs.title.ja : docs.title.en}</h1>
         </div>
         <div dangerouslySetInnerHTML={{ __html: docs.body }} />
       </main>
