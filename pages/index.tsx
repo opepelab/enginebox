@@ -46,28 +46,28 @@ const Index: React.FC<Map> = ({ docs }) => {
               </li>
             </ul>
           </div>
-          {docs.map((props: any) => (
+          {/* {docs.map((props: any) => (
             <dl key={props.id}>
               <Link href="/">
                 <a className="Center">{From ? props.title.ja : props.title.en}</a>
               </Link>
             </dl>
-          ))}
+          ))} */}
         </div>
       </main>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://enginebox.vercel.app/hello');
-  const data = await res.json();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch('https://enginebox.vercel.app/api/hello');
+//   const data = await res.json();
 
-  return {
-    props: {
-      docs: data.items,
-    },
-  };
-};
+//   return {
+//     props: {
+//       docs: data.items,
+//     },
+//   };
+// };
 
 export default Index;
