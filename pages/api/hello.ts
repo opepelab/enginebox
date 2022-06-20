@@ -1,9 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function (req: NextApiRequest, res: NextApiResponse) {
   try {
-    res.status(200);
-    res.send({
+    res.status(200).json({
       items: [
         {
           id: 1,
@@ -18,6 +17,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       ],
     });
   } catch (err) {
-    res.status(500).send({ error: 'failed to fetch data' });
+    res.status(500).json({ error: 'failed to fetch data' });
   }
 }
