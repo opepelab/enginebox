@@ -31,10 +31,10 @@ const securityHeaders = [
 ];
 
 module.exports = {
-  i18n: {
-    locales: ['en', 'ja'],
-    defaultLocale: 'ja',
-  },
+  // i18n: {
+  //   locales: ['en', 'ja'],
+  //   defaultLocale: 'ja',
+  // },
   swcMinify: true,
   async headers() {
     return [
