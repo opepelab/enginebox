@@ -23,5 +23,5 @@ const items = [
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
-  res.json(items);
+  res.send(items);
 }
