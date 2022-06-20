@@ -6,22 +6,22 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
       id: 1,
       slug: 'variable',
       title: 'テストだよ tstt',
-      // body: {
-      //   ja: 'てすとー',
-      //   en: 'testoer',
-      // },
+      body: {
+        ja: 'てすとー',
+        en: 'testoer',
+      },
     },
-    // {
-    //   id: 2,
-    //   slug: 'functions',
-    //   title: {
-    //     ja: '関数を学ぼう',
-    //     en: 'Learn functions',
-    //   },
-    //   body: {
-    //     ja: 'テスト',
-    //     en: 'test',
-    //   },
-    // },
+    {
+      id: 2,
+      slug: 'functions',
+      title: {
+        ja: '関数を学ぼう',
+        en: 'Learn functions',
+      },
+      body: {
+        ja: 'テスト',
+        en: 'test',
+      },
+    },
   ]);
 };
