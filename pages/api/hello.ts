@@ -2,8 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    res.statusCode = 200;
-    res.json([
+    res.status(200);
+    res.send([
       {
         id: 1,
         slug: 'variable',
@@ -24,6 +24,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       },
     ]);
   } catch (err) {
-    res.status(500).json({ error: 'failed to fetch data' });
+    res.status(500).send({ error: 'failed to fetch data' });
   }
 }
