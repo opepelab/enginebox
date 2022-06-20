@@ -7,20 +7,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         id: 1,
         slug: 'variable',
-        title: 'するぐいちー',
-        body: {
-          ja: 'てすとー',
-          en: 'testoer',
-        },
+        title: 'ヴァリアブル',
       },
       {
         id: 2,
-        slug: 'functions',
-        title: 'するぐつー',
-        body: {
-          ja: 'テスト',
-          en: 'test',
-        },
+        slug: 'function',
+        title: 'ファンクション',
       },
     ]);
   } catch (err) {
