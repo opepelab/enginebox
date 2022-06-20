@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 type Content = {
   docs: {
+    id: number;
     title: {
       ja: string;
       en: string;
@@ -15,24 +16,15 @@ type Content = {
   };
 };
 
-type Paths = {
-  slug: string;
-};
-
 interface IParams extends ParsedUrlQuery {
   slug: string;
 }
 
 const Slug: React.FC<Content> = ({ docs }) => {
-  const { locale } = useRouter();
-  const From = locale === 'ja';
   return (
     <div>
       <main>
-        <div>
-          <h1 className="h1">{docs.title.ja}</h1>
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: docs.body.ja }} />
+        <h1>{docs.title.ja}</h1>
       </main>
     </div>
   );
@@ -42,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('https://enginebox.vercel.app/api/hello');
   const data = await res.json();
 
-  const paths = data.items.map((item: Paths) => ({
+  const paths = data.items.map((item: IParams) => ({
     params: { slug: item.slug },
     locale: 'ja',
   }));
@@ -52,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params as IParams;
-  const res = await fetch(`https://enginebox.vercel.app/api/hello?${slug}`);
+  const res = await fetch(`https://enginebox.vercel.app/api/hello/${slug}`);
   const data = await res.json();
 
   return {
@@ -63,3 +55,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export default Slug;
+
+{
+  /* <div dangerouslySetInnerHTML={{ __html: docs.body.ja }} /> */
+}
+
+// const { locale } = useRouter();
+// const From = locale === 'ja';
