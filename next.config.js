@@ -23,11 +23,6 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin',
   },
-
-  {
-    key: 'Content-Security-Policy',
-    value: 'self',
-  },
 ];
 
 module.exports = {
