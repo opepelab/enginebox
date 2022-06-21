@@ -21,7 +21,7 @@ const Index: React.FC<Map> = ({ docs }) => {
             <ul className="HomeList">
               <li>
                 <Link href="/JavaScript/list">
-                  <a>JavaScript</a>
+                  <a>JavaScripttt</a>
                 </Link>
               </li>
               <li>
