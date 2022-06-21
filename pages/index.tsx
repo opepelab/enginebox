@@ -1,4 +1,4 @@
-import { Text, Box, Heading } from '@chakra-ui/react';
+// import { Text, Box, Heading } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 import Link from 'next/link';
