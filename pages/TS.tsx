@@ -1,4 +1,4 @@
-import { Text, Box } from '@chakra-ui/react';
+// import { Text, Box } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 
 type Map = {
@@ -11,9 +11,6 @@ const Ts: React.FC<Map> = ({ blog }) => {
   return (
     <div>
       <main>
-        <Box>
-          <Text>tes</Text>
-        </Box>
       </main>
     </div>
   );

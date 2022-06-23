@@ -1,4 +1,4 @@
-import { Text, Box } from '@chakra-ui/react';
+// import { Text, Box } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 
@@ -13,9 +13,6 @@ const Rt: React.FC<Map> = ({ blog }) => {
   return (
     <div>
       <main>
-        <Box>
-          <Text>Test</Text>
-        </Box>
       </main>
     </div>
   );

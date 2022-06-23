@@ -1,4 +1,4 @@
-import { Text, Box } from '@chakra-ui/react';
+// import { Text, Box } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 
@@ -13,21 +13,6 @@ const Nt: React.FC<Map> = ({ blog }) => {
   return (
     <div>
       <main>
-        <Box>
-          <Text>Test</Text>
-          {/* {blog.map((blog: any) => (
-          <dl key={blog.id}> */}
-          {/* <dt className="dateST">
-              <Date dateString={data.date} />
-            </dt> */}
-          {/* <Link href={`/docs/url/${data.slug}`}> */}
-          {/* <a>
-              <div>{blog.title}</div>
-            </a> */}
-          {/* </Link> */}
-          {/* </dl>
-        ))} */}
-        </Box>
       </main>
     </div>
   );
