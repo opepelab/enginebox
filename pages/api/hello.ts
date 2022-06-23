@@ -1,13 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 type Res = {
-  id: number;
-  slug: string;
-  title: string;
-}[];
+  items: {
+    id: number;
+    slug: string;
+    title: string;
+}[]
+}
 
 export default function (req: NextApiRequest, res: NextApiResponse<Res>) {
-  res.status(200).json([
+  res.status(200).json({
+    items: [
     {
       id: 1,
       slug: "variable",
@@ -18,5 +21,7 @@ export default function (req: NextApiRequest, res: NextApiResponse<Res>) {
       slug: "function",
       title: "ファンクション",
     },
-  ]);
+  ]
+}
+  );
 }
