@@ -18,6 +18,9 @@ const Index: React.FC<Map> = ({ docs }) => {
       <main>
         <div>
           <div className="Index">
+            <p>{}</p>
+            <p>{}</p>
+            <p>{}</p>
             <ul className="HomeList">
               <li>
                 <Link href="/JavaScript/list">
