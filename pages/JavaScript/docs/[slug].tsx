@@ -39,16 +39,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // ⏫パスの中身はあってるっぽい
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug;
-  const res = await fetch(`http://127.0.0.1:5000/${slug}/`, {
+  const res = await fetch(`http://127.0.0.1:5000/${slug}`, {
     headers: {
       Accept: 'application/json; charset=UTF-8',
       'User-Agent': 'MY-UA-STRING',
     },
   });
 
-  // const stringified = JSON.stringify(res);
-  // const data = await JSON.parse(stringified);
-  const { data } = await res.json();
+  const stringified = JSON.stringify(res);
+  const data = await JSON.parse(stringified);
+  // const data = await res.json();
   // const data = await JSON.parse(JSON.stringify(res))
 
   return {

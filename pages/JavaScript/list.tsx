@@ -25,7 +25,7 @@ const List: React.FC<Map> = ({ docs }) => {
     <div>
       <main>
         {docs.map((props: Content) => (
-          <dl key={props.id}>
+          <dl>
             <Link href={`/JavaScript/docs/${props.slug}`}>
               <a className="Center">{props.title}</a>
             </Link>
