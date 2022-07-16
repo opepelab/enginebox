@@ -13,6 +13,13 @@ type Str = {
   slug: string;
 };
 
+type ID = {
+  id: number;
+  slug: string;
+  body: string;
+  title: string;
+};
+
 const Slug: React.FC<Content> = ({ docs }) => {
   return (
     <div>
@@ -27,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('http://127.0.0.1:5000/');
   const data = await res.json();
 
-  const paths: string[] = data.map((item: Str) => ({
+  const paths: [...string[]] = data.map((item: ID) => ({
     params: { slug: item.slug.toString() },
   }));
 
@@ -46,9 +53,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
   });
 
-  const stringified = JSON.stringify(res);
-  const data = await JSON.parse(stringified);
-  // const data = await res.json();
+  // const stringified = JSON.stringify(res);
+  // const data = await JSON.parse(stringified);
+  const data = await res.json();
   // const data = await JSON.parse(JSON.stringify(res))
 
   return {
