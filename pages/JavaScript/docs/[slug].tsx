@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
+import fetch from 'node-fetch';
 
 type Content = {
   docs: {
@@ -31,12 +32,10 @@ const Slug: React.FC<Content> = ({ docs }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://127.0.0.1:5000/');
-  const data = await res.json();
+  const res = await fetch('https://api-server-kynp76vkbq-an.a.run.app');
+  const repos: any = await res.json();
 
-  const paths: [...string[]] = data.map((item: ID) => ({
-    params: { slug: item.slug.toString() },
-  }));
+  const paths = repos.map((item: ID) => `/JavaScript/docs/${item.slug}`);
 
   return {
     paths,
@@ -45,22 +44,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 // ⏫パスの中身はあってるっぽい
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params?.slug;
-  const res = await fetch(`http://127.0.0.1:5000/${slug}`, {
-    headers: {
-      Accept: 'application/json; charset=UTF-8',
-      'User-Agent': 'MY-UA-STRING',
-    },
-  });
+  const slug = String(context.params?.id);
+  const res = await fetch(`https://api-server-kynp76vkbq-an.a.run.app?/${slug}`, { method: 'GET' });
 
   // const stringified = JSON.stringify(res);
   // const data = await JSON.parse(stringified);
-  const data = await res.json();
+  const json: any = await res.json();
+  const stars = json.stargazers_count;
   // const data = await JSON.parse(JSON.stringify(res))
 
   return {
     props: {
-      docs: data,
+      docs: stars,
     },
   };
 };

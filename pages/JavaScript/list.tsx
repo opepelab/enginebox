@@ -37,7 +37,7 @@ const List: React.FC<Map> = ({ docs }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://127.0.0.1:5000/');
+  const res = await fetch('https://api-server-kynp76vkbq-an.a.run.app');
   const data = await res.json();
 
   return {
