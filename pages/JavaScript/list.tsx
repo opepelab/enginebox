@@ -3,9 +3,10 @@ import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { getAllPostData } from '../lib/client';
 
 type Map = {
-  docs: {
+  posts: {
     map: StringConstructor;
   };
 };
@@ -20,11 +21,11 @@ type Content = {
   // };
 };
 
-const List: React.FC<Map> = ({ docs }) => {
+const List: React.FC<Map> = ({ posts }) => {
   return (
     <div>
       <main>
-        {docs.map((props: Content) => (
+        {posts.map((props: Content) => (
           <dl>
             <Link href={`/JavaScript/docs/${props.slug}`}>
               <a className="Center">{props.title}</a>
@@ -37,12 +38,11 @@ const List: React.FC<Map> = ({ docs }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://api-server-kynp76vkbq-an.a.run.app');
-  const data = await res.json();
+  const posts = await getAllPostData();
 
   return {
     props: {
-      docs: data,
+      posts,
     },
   };
 };
