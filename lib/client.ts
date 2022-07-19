@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-const apiUrl = 'https://api-server-kynp76vkbq-an.a.run.app';
+const apiUrl = 'https://api-server-kynp76vkbq-an.a.run.app/posts';
 
 export async function getAllPostData() {
   const res = await fetch(apiUrl);
@@ -25,8 +25,9 @@ export async function getPostIds() {
 }
 
 export async function getPostData(slug: string) {
-  const res = await fetch(`${apiUrl}/${slug}`);
-  const post = Object(await res.json());
+  const res = await fetch(`${apiUrl}/${slug}/`);
+  const data = JSON.stringify(res);
+  const post = await JSON.parse(data);
 
   return {
     post,

@@ -2,12 +2,13 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
 import fetch from 'node-fetch';
-import { getPostData, getPostIds } from '../../lib/client';
+import { getPostData, getPostIds } from 'lib/client';
 
 type Content = {
-  post: {
+  posts: {
     id: number;
     title: string;
+    slug: string;
   };
 };
 
@@ -22,11 +23,12 @@ type ID = {
   title: string;
 };
 
-const Slug: React.FC<Content> = ({ post }) => {
+const Slug: React.FC<Content> = ({ posts }) => {
   return (
     <div>
       <main>
-        <p>{post.title}</p>
+        <p>{posts.title}</p>
+        <div>{posts.slug}</div>
       </main>
     </div>
   );
@@ -46,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      post,
+      posts: post[0],
     },
   };
 };

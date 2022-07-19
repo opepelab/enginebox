@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import useTranslate from 'hooks/useTranslate';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { getAllPostData } from '../lib/client';
+import { getAllPostData } from 'lib/client';
 
 type Map = {
   posts: {
